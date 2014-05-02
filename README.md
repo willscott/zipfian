@@ -3,6 +3,8 @@ zipfian
 
 Zipf Distribution Generation for Node.js
 
+[![zipf distribution](https://upload.wikimedia.org/wikipedia/commons/thumb/7/70/Zipf_distribution_PMF.png/325px-Zipf_distribution_PMF.png)](https://en.wikipedia.org/wiki/Zipf's_law)
+
 Usage
 -----
 
