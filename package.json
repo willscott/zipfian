@@ -1,0 +1,18 @@
+{
+  "name": "zipfian",
+  "description": "Generate Zipf distributions",
+  "version": "0.1.0",
+  "homepage": "https://github.com/willscott/zipfian",
+  "bugs": {
+    "url": "https://github.com/willscott/zipfian/issues",
+    "email": "willscott@gmail.com"
+  },
+  "author": "Will Scott <willscott@gmail.com> (https://wills.co.tt)",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/willscott/zipfian"
+  },
+  "keywords": ["zipf", "distribution", "math"],
+  "license": "Apache-2.0",
+  "main": "zipfian.js"
+}
