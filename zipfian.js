@@ -76,3 +76,6 @@ ZipfianGenerator.prototype.nextInt = function() {
 
 exports.ZipfianGenerator = ZipfianGenerator;
 
+exports.getGenerator = function(items) {
+  return new ZipfianGenerator(0, items);
+};
