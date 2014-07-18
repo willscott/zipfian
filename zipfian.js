@@ -29,14 +29,9 @@ var ZipfianGenerator = function(min, max, constant, zetan) {
   this.base = min;
   this.constant = constant || 0.99;
 
-  this.theta = this.constant;
-  this.zeta2theta = this.getZeta(0, 2, this.theta, 0);
-
-  this.alpha = 1.0/(1.0 - this.theta);
   this.zetan = zetan || this.getZeta(0, this.items, this.constant, 0);
-  this.countforzeta = this.items;
-  this.eta = (1 - Math.pow(2.0 / this.items, 1 - this.theta)) /
-      (1 - this.zeta2theta / this.zetan);
+  this.eta = (1 - Math.pow(2.0 / this.items, 1 - this.constant)) /
+      (1 - this.getZeta(0, 2, this.constant, 0) / this.zetan);
 };
 
 /**
@@ -61,13 +56,10 @@ ZipfianGenerator.prototype.next = function() {
   var uz = u * this.zetan;
   
   if (uz < 1.0) {
-    return 0;
+    return this.base;
   }
-  if (uz < 1.0 + Math.pow(0.5, this.theta)) {
-    return 1;
-  }
-  var ret = this.base + (this.items * Math.pow(this.eta * u - this.eta + 1, this.alpha));
-  return ret;
+  return this.base + this.items * 
+      Math.pow(this.eta * u - this.eta + 1, 1.0 / (1.0 - this.constant));
 };
 
 ZipfianGenerator.prototype.nextInt = function() {
